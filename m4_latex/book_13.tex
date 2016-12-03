@@ -1,1 +1,95 @@
+\documentclass [a4paper] {book}
+\usepackage[utf8x]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=5cm,right=5cm,marginparwidth=1.75cm]{geometry}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\setcounter{chapter}{3}
+\setcounter{section}{3}
+\setcounter{subsection}{3}
+\setcounter{page}{45}
+\linespread{2}
+\title{Street Fighting Mathematics}
+\begin{document}
+For comparison, the exact solution of the spring differential equation is, from Problem 3.22,
+\[ x = x_0\cos\omega t , ~(3.28) \]
+where $\omega$ is $\sqrt[2]{k/m} $The approximated angular frequency is also exact!
 
+\noindent \textbf{Problem 3.20 Amplitude independence}
+Use dimensional analysis to show that the angular frequency $\omega$ cannot depend on the amplitude $x_0$ .
+
+\noindent \textbf{Problem 3.21 Checking dimensions in the alleged solution}
+What are the dimensions of $\omega t$? What are the dimensions of $\cos\omega t$? Check the dimensions of the proposed solution $x = x_0\cos\omega t$, and the dimensions of the proposed period $2\pi\sqrt[2]{m/k}$. 
+\noindent \textbf{Problem 3.22 Verification}
+Show that $x = x_0\cos\omega t$ with $\omega =\sqrt[2]{k/m} $ solves the spring differential equation 
+\[m\frac{d^2x}{dt^2} + kx = 0. ~(3.29)\]
+\subsection{\textbf{ Meaning of the Reynolds number}}
+As a further example of lumping---in particular, of the significant-change approximation--- let’s analyze the Navier-Stokes equations introduced in Section 2.4, 
+\[\frac{\partial v}{\partial t} +(v\nabla)v  =-\frac{1}p \nabla p)+v(\nabla)^2 v, ~(3.30)\]
+and extract from them a physical meaning for the Reynolds number $rv/v$.
+To do so, we estimate the typical magnitude of the inertial term $(v\nabla)v$ and of the viscous term $({v\nabla}^{2})v$.  
+
+\noindent $\vartriangleright$ \textit{What is the typical magnitude of the inertial term? }
+\noindent
+
+The inertial term $(v\nabla)v$  contains the spatial derivative $\nabla v$. According to the significant-change approximation (Section 3.3.3), the derivative $\nabla v$ is roughly the ratio 
+\[\frac{significant~change~in~flow~velocity}{~distance~over~which~flow~velocity~changes~significantly}. (3.31)\]
+\newpage
+ The flow velocity (the velocity of the air) is nearly zero far from the cone and is comparable to v near the cone (which is moving at speed $v$). Therefore, v, or a reasonable fraction of $v$, constitutes a significant change in flow velocity. This speed change happens over a distance comparable to the size of the cone: Several cone lengths away, the air hardly knows about the falling cone. Thus $\nabla v ∼ \frac{v}r$. The inertial term $(v\nabla)v$ contains a second factor of $v$, so $(v\nabla)v$ is roughly $\frac{v^2}/r$. 
+\noindent {$\vartriangleright$ \textit{What is the typical magnitude of the viscous term?}}
+\noindent The viscous term $({v\nabla}^{2})v$ contains two spatial derivatives of $v$.Because each spatial derivative contributes a factor of $1/r$ to the typical magnitude, $({v\nabla}^{2})v$ is roughly $(vv)/r^2$.
+
+ 
+\noindent Thus, the Reynolds number measures the importance of viscosity. When $Re\gg 1$, the viscous term is small, and viscosity has a negligible effect. It cannot prevent nearby pieces of fluid from acquiring significantly different velocities, and the flow becomes turbulent. When $Re \ll 1$, the viscous term is large, and viscosity is the dominant physical effect. The flow oozes, as when pouring cold honey.
+\section{Predicting the period of a pendulum} 
+Lumping not only turns integration into multiplication, it turns nonlinear into linear differential equations. Our example is the analysis of the period of a pendulum, for centuries the basis of Western timekeeping. 
+\noindent $\vartriangleright$ \textit{How does the period of a pendulum depend on its amplitude?}
+The amplitude $\theta_0$ is the maximum angle of the swing; for a lossless pendulum released from rest, it is also the angle of release. The effect of amplitude is contained in the solution to the pendulum differential equation (see [24] for the equation’s derivation): 
+\[\frac{d^2\theta}{dt^2} + \frac{g}l\sin\theta = 0.~(3.32)\] 
+The analysis will use all our tools: dimensions (Section 3.5.2), easy cases (Section 3.5.1 and Section 3.5.3), and lumping (Section 3.5.4).
+\newpage
+\noindent \textbf{Problem 3.23 Angles}
+Explain why angles are dimensionless.
+\textbf{Problem 3.24 Checking and using dimensions}
+Does the pendulum equation have correct dimensions? Use dimensional analysis to show that the equation cannot contain the mass of the bob (except as a common factor that divides out).
+\subsection{\textbf{ Small amplitudes: Applying extreme cases}}
+The pendulum equation is difficult because of its nonlinear factor $\sin\theta$. Fortunately, the factor is easy in the small-amplitude extreme case $\theta \to 0$. In that limit, the height of the triangle, which is $\sin\theta$, is almost exactly the arclength $\theta$ . Therefore, for small angles, $\sin\theta \approx \theta$. 
+
+\noindent \textbf{Problem 3.25 Chord approximation}
+The $\sin\theta \approx \theta$ approximation replaces the arc with a straight, vertical line. To make a more accurate approximation, replace the arc with the chord (a straight but nonvertical  line). What is the resulting approximation for $\sin\theta$? 
+In the small-amplitude extreme, the pendulum equation becomes linear: 
+\[\frac{d^2\theta}dt^2 + \frac{g}l \theta = 0. ~(3.33)\] 
+Compare this equation to the spring-mass equation (Section 3.4) 
+\[\frac{d^2x}dt^2 + \frac{k}m x = 0. ~(3.34)\] 
+The equations correspond with x analogous to $\theta$ and $k/m$ analogous to $g/l$. The frequency of the spring-mass system is $\omega = \sqrt{k/m}$, and its period is $T = 2\pi/\omega = 2\pi \sqrt{m/k}$. For the pendulum equation, the corresponding period is 
+\[ T = 2\pi \sqrt{\frac {l}g} (for small amplitudes). (3.35)\]
+(This analysis is a preview of the method of analogy, which is the subject of Chapter 6.)
+\newpage
+
+\textbf{Problem 3.26 Checking dimensions} 
+
+\noindent Does the period $2\pi \sqrt{l/g}$ have correct dimensions? 
+
+\noindent \textbf{Problem 3.27 Checking extreme cases} 
+
+\noindent Does the period $T = 2\pi\sqrt{l/g}$ make sense in the extreme cases $g \to \infty$ and $g \to 0$ 
+
+\noindent \textbf{Problem 3.28 Possible coincidence} 
+
+\noindent Is it a coincidence that $g\approx {\pi}^{2} ms^{-2}$? (For an extensive historical discussion that involves the pendulum, see [1] and more broadly also [4, 27, 42].)
+
+\noindent \textbf{Problem 3.29 Conical pendulum for the constant}
+
+\noindent The dimensionless factor of $2\pi$ can be derived using an insight from Huygens[15, p.79]: to analyze the motion of a pendulum moving in a horizontal circle (a conical pendulum). Projecting its two-dimensional motion onto a vertical screen produces one-dimensional pendulum motion, so the period of the two-dimensional motion is the same as the period of one-dimensional pendulum motion! Use that idea along with Newton’s laws of motion to explain the $2\pi$.
+\subsection{\textbf{ Arbitrary amplitudes: Applying dimensional analysis}} 
+The preceding results might change if the amplitude $\theta_0$ is no longer small. 
+
+\noindent $\vartriangleright$ \textit{As $\theta_0$ increases, does the period increase, remain constant, or decrease?}
+
+\noindent Any analysis becomes cleaner if expressed using dimensionless groups (Section 2.4.1). This problem involves the period $T$ , length $l$ , gravitational strength $g$ , and amplitude $\theta_0$. Therefore, $T$ can belong to the dimensionless group $T/\sqrt{l/g}$. Because angles are dimensionless, $\theta_0$ is itself a dimensionless group. The two groups $T/\sqrt{l/g}$ and $\theta_0$ are independent and fully describe the problem (Problem 3.30). 
+
+\noindent An instructive contrast is the ideal spring-mass system. The period $T$ ,spring constant $k$,and mass $m$ can form the dimensionless group $T/\sqrt{m/k} $ ;but the amplitude $x_0$, as the only quantity containing a length, cannot be part of any dimensionless group (Problem 3.20) and cannot therefore affect the period of the spring-mass system. In contrast,
+\end{document}
