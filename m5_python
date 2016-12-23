@@ -1,0 +1,107 @@
+from functools import reduce
+import math
+import matplotlib.pyplot as plt
+import numpy as np
+
+while True:
+    print("Hello")
+    print("1 а)Введите '1.1' для вычисления суммы c for-циклом")
+    print("1 b)Введите '1.2' для вычисления суммы с while-циклом"
+    print("1 c)Введите '1.3' для вычисления суммы с рекурсией")
+    print("2.Введите '2' для вычисления степени двойки ,которая не больше исходного числа N")
+    print("3.Введите '3' для вычисления cреднего арифметического элементов списка")
+    print("4.Введите '4' для вычисления номера числа N в последовательности Фибоначчи")
+    print("5.Введите '5' для вычисления факториала заданного числа N")
+    print("6.Введите '6' для замены максимального и минимального элементов списка")
+    print("Введите '0' чтобы завершить работу")
+    
+    user_input = input(": ")
+
+    if user_input == "0":
+        break
+        
+        elif user_input == "1.1":
+        sum1 = input("Необходимо ввести числа")
+        sum1 = sum1.split()
+        h = 0
+        a1 = []
+        for i in sum1:
+        a1.append(float(x))
+        for x in b1:
+            h += x
+        print(h)
+        
+        elif user_input == "1.2":
+        sum0 = input("Необходимо ввести числа")
+        sum0 = sum0.split()
+        sum2 = 0
+        i = len(sum2)
+        while i > 0:
+        sum2 = sum2 + int(sum0[i])
+        i=i+1
+        print(sum2)
+        
+        elif user_input == "1.3":
+        lst = input("Необходимо ввести числа")
+        lst = lst.split()
+        c = 0
+        d = 0
+                def sum3(e, c1=0):            c1 += float(lst[e - 1])
+            if e == 0:
+                return 0
+            return sum3(e - 1) + c1
+        print(sum3((len(lst))))
+        
+        elif user_input == "2":
+        n = int(input("Введите натуральное число N:"))
+        k = 0
+        while 2 ** (k + 1) <= n:
+            k += 1
+
+        print("Степень", 2 ** k)
+        print("Показатель степени", k)
+        
+       elif user_input == "3":
+        lst = input("Необходимо ввести числа:")
+        f = []
+        lst = lst.split()
+        for i in lst:
+            f.append(float(i))
+        sum1 = reduce(lambda g1, x: g1 + x, f)
+        sum2 = float(sum1)
+        lent = len(lst)
+        h = float(sum2 / lent)
+        print(h)
+
+    elif user_input == "4":
+         j= input("Введите число N:")
+        j = j.split()
+        b = []
+        for i in j:
+            b.append(float(i))
+        k = sum(b)
+        c = 0
+        f1 = 1
+        f2 = 1
+        i = 2
+        n = 2
+        j_sum = 0
+        while f1 < h:
+            f1 += f2
+            f2 = f1 - f2
+            n += 1
+        if f1 == k:
+            print("Число {0} является ".format(k), n, "числом Фибоначи")
+        else:
+            print("-1")
+
+    elif user_input == "6":
+        lst = input("Необходимо ввести числа:")
+        lst = lst.split()
+        print("Исходный список", lst)
+        mn = min(lst)
+        mx = max(lst)
+        imn = lst.index(mn)
+        imx = lst.index(mx)
+        lst[imn], lst[imx] = lst[imx], lst[imn]
+        print("Новый список", lst)
