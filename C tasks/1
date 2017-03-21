@@ -1,9 +1,8 @@
 #include <stdio.h>
 
-int
-main (void)
+  int main (void)
 {
-  printf ("Hello, Hassi Messaoud!\n");
-  getchar ();
+    printf ("Hello, Hassi Messaoud!\n");
+    getchar ();
   return 0;
 }
