@@ -1,21 +1,47 @@
 #include <stdio.h>
 #include <math.h>
-int main(void) {
-float a,b,c,x1,x2;
-double D;
-scanf("%f %f %f",&a,&b,&c);
-D=pow(b,2)-4*a*c;
-if (D>=0){
-if (D>0){
-x1=(-b+sqrt(D))/2*a;
-x2=(-b-sqrt(D))/2*a;
-printf("x1=%f,x2=%f\n",x1,x2);
-}
-else {
-x1=-b/(2*a);
-printf("x=%f\n",x1);
-}
-}
-else printf("no solution\n");
-return 0;
+main()
+{
+    float a,b,c;
+    printf("vvedite a, b, c: ");
+    scanf("%f %f %f", &a, &b, &c);
+    if(a == 0)
+    {
+        if(b == 0)
+        {
+            if(c == 0)
+            {
+                printf("x - lyboe 4islo");
+            }
+            else
+            {
+                printf("kornei net");
+            }
+        }
+        else
+        {
+            printf ("x = %g", -c/b);
+        }
+    }
+    else
+    {
+        float d, x1, x2;
+        d = b * b - 4 * a * c;
+        if(d < 0)
+        {
+            printf("kornei net");
+        }
+        else
+        {
+            if(d == 0)
+            {
+                printf("x= %g", -b/(2*a));
+            }
+            else
+            {
+                printf("x1= %g, x2= %g",(-b+sqrt(d))/(2*a),(-b-sqrt(d))/(2*a));
+            }
+        }
+    }
+    return 0;
 }
