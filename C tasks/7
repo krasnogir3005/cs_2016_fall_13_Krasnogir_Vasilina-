@@ -4,7 +4,7 @@ int main(void)
 float a,b,d;
 char s;
  int i;
-printf("Vvedite dva chisla i znak deistviya: ");
+printf("Vvedite dva chisla i znak deistviya: ");///In form:" 3 2 +" .
 scanf("%f %f %c", &a,&b,&s);
 switch (s)
 {
