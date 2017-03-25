@@ -2,6 +2,7 @@
   int main() {
   int day =30;
   int month = 5;
+   printf("%d %d \n", day, month);
     day = day + month;
     month = month - day;
     month = -month;
