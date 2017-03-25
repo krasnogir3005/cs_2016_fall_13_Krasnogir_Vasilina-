@@ -21,11 +21,11 @@ int main(int argc, char *argv[])
     unsigned char buf[SIZE_BUF];    
     size_t count_byte_read = fread(buf, 1, sizeof(buf), in);  
     while (count_byte_read > 0) {
-        fwrite(buf, sizeof(*buf), count_byte_read, out);   ///Запись данных в копию.
-        count_byte_read = fread(buf, 1, sizeof(buf), in);  ///Считывание следующей "пачки" байт исходного файла.
+        fwrite(buf, sizeof(*buf), count_byte_read, out);   
+        count_byte_read = fread(buf, 1, sizeof(buf), in);  
     }
-    fclose(in);  ///Закрытие исходного файла.
-    fclose(out); ///Закрытие файла-копии.
+    fclose(in);  
+    fclose(out); 
     printf("File \"%s\" copy to file \"%s\".\n", argv[1], argv[2]);
     return 0;
 }
